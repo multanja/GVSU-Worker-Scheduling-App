@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVSU Worker Scheduling App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>GVSU Worker Scheduling App</h1>
+        <p>Student Employee Scheduling System</p>
+    </header>
+
+    <main>
+
+        <!-- LOGIN SECTION -->
+        <section id="login-section">
+            <h2>Welcome!</h2>
+            <p>Select your role to continue.</p>
+
+            <button onclick="login('employee')">
+                Employee Login
+            </button>
+
+            <button onclick="login('manager')">
+                Manager Login
+            </button>
+        </section>
+
+        <!-- EMPLOYEE DASHBOARD -->
+        <section id="employee-dashboard" style="display:none;">
+
+            <h2>Employee Dashboard</h2>
+
+            <button onclick="logout()">Logout</button>
+
+            <h3>My Work Schedule</h3>
+            <div id="employee-schedule"></div>
+
+            <h3>Submit Availability</h3>
+            <form id="availability-form">
+                <label for="available-date">Available Date:</label>
+                <input type="date" id="available-date" required>
+
+                <label for="available-time">Available Time:</label>
+                <input type="time" id="available-time" required>
+
+                <button type="submit">Submit Availability</button>
+            </form>
+
+            <h3>Request Time Off</h3>
+            <form id="timeoff-form">
+                <label for="timeoff-date">Date:</label>
+                <input type="date" id="timeoff-date" required>
+
+                <label for="timeoff-reason">Reason:</label>
+                <textarea id="timeoff-reason" required></textarea>
+
+                <button type="submit">Submit Request</button>
+            </form>
+
+            <h3>Request Shift Change</h3>
+            <form id="shiftchange-form">
+                <label for="shift-date">Shift Date:</label>
+                <input type="date" id="shift-date" required>
+
+                <label for="shift-reason">Reason:</label>
+                <textarea id="shift-reason" required></textarea>
+
+                <button type="submit">Request Change</button>
+            </form>
+
+            <h3>My Requests</h3>
+            <div id="employee-requests"></div>
+
+        </section>
+
+        <!-- MANAGER DASHBOARD -->
+        <section id="manager-dashboard" style="display:none;">
+
+            <h2>Manager Dashboard</h2>
+
+            <button onclick="logout()">Logout</button>
+
+            <h3>Create Employee Schedule</h3>
+
+            <form id="schedule-form">
+                <label for="employee-name">Employee Name:</label>
+                <input type="text" id="employee-name" required>
+
+                <label for="schedule-date">Shift Date:</label>
+                <input type="date" id="schedule-date" required>
+
+                <label for="start-time">Start Time:</label>
+                <input type="time" id="start-time" required>
+
+                <label for="end-time">End Time:</label>
+                <input type="time" id="end-time" required>
+
+                <button type="submit">Add Shift</button>
+            </form>
+
+            <h3>Employee Schedules</h3>
+            <div id="manager-schedule"></div>
+
+            <h3>Employee Availability</h3>
+            <div id="manager-availability"></div>
+
+            <h3>Employee Requests</h3>
+            <div id="manager-requests"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CIS 350 Software Engineering | GVSU</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
